@@ -21,4 +21,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\msa.phase2.api\msa.phase2.api.csproj" />
+  </ItemGroup>
+
 </Project>
