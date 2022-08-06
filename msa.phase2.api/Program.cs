@@ -11,6 +11,12 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<ProductContext>(opt => opt.UseInMemoryDatabase("Products"));
 
 
+//add fakestore api client
+builder.Services.AddHttpClient("FakeStore", configureClient: client =>
+{
+    client.BaseAddress = new Uri("https://fakestoreapi.com");
+});
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
