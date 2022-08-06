@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "msa.phase2.api", "msa.phase2.api.csproj", "{25D8C9C4-B3BA-4037-A50E-3B5AD326AE7A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit Test", "Unit Test", "{836803F5-D2F1-4F3C-8656-A7CBDB00B4F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "msa.phase2.api.test", "..\msa.phase2.api.test\msa.phase2.api.test.csproj", "{1F9D7F56-3CB9-40EC-82DC-473D62B97A71}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{25D8C9C4-B3BA-4037-A50E-3B5AD326AE7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25D8C9C4-B3BA-4037-A50E-3B5AD326AE7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25D8C9C4-B3BA-4037-A50E-3B5AD326AE7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25D8C9C4-B3BA-4037-A50E-3B5AD326AE7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F9D7F56-3CB9-40EC-82DC-473D62B97A71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F9D7F56-3CB9-40EC-82DC-473D62B97A71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F9D7F56-3CB9-40EC-82DC-473D62B97A71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F9D7F56-3CB9-40EC-82DC-473D62B97A71}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1F9D7F56-3CB9-40EC-82DC-473D62B97A71} = {836803F5-D2F1-4F3C-8656-A7CBDB00B4F9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A86F4F15-2BE6-44AB-8EEE-AF6B59D8DA56}
+	EndGlobalSection
+EndGlobal
