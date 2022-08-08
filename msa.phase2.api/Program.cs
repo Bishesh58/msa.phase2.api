@@ -13,7 +13,7 @@ builder.Services.AddDbContext<ProductContext>(opt => opt.UseInMemoryDatabase("Pr
 
 
 //service injection
-//builder.Services.AddScoped <IProductService Product >();
+builder.Services.AddScoped <IProductService, ProductServices >();
 
 //add fakestore api client
 builder.Services.AddHttpClient("FakeStore", configureClient: client =>
