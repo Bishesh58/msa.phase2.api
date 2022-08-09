@@ -6,6 +6,7 @@ using Moq;
 using msa.phase2.api.Models;
 using msa.phase2.api.Services;
 using msa.phase2.api.Controllers;
+using Microsoft.AspNetCore.Mvc;
 
 namespace msa.phase2.api.test
 {
@@ -36,5 +37,40 @@ namespace msa.phase2.api.test
             // Assert.NotNull(result);
             result.Should().NotBeNull();
         }
+
+        [Fact]
+        public async Task GetProduct_ShouldReturn_SingleProduct_WhenOkResult()
+        {
+            //arrange
+            var productControllerMock = _fixture.Create<Task<Product>>();
+            var id = _fixture.Create<int>();
+            _productServiceMock.Setup(x => x.GetProduct(id)).Returns(productControllerMock);
+
+            //act
+            var result = await _sut.GetProduct(id).ConfigureAwait(false);
+
+            //assert
+            // Assert.NotNull(result);
+            result.Should().NotBeNull();
+        }
+
+        [Fact]
+        public async Task DeleteProduct_ShouldReturnNoContents_WhenDeletedRecord()
+        {
+            //arrange
+            var productControllerMock = _fixture.Create<Task<Product>>();
+            var id = _fixture.Create<int>();
+            _productServiceMock.Setup(x => x.DeleteProduct(id)).Returns(productControllerMock);
+
+            //act
+            var result = await _sut.DeleteProduct(id).ConfigureAwait(false);
+
+            //assert
+            // Assert.NotNull(result);
+            result.Should().NotBeNull();
+            result.Should().BeAssignableTo<NoContentResult>();
+        }
+
+       
     }
 }
