@@ -23,8 +23,39 @@ namespace msa.phase2.api.Services
             return await _context.Products.FindAsync(id);
         }
 
+        public async Task<Product> AddProduct(Product product)
+        {
+           await _context.Products.AddAsync(product);
+            _context.SaveChanges();
+            return product;
+        }
 
-       
+        public async Task<Product> DeleteProduct(long id)
+        {
+           var product = await _context.Products.FindAsync(id);
+            if(product != null)
+            {
+                _context.Products.Remove(product);
+                await _context.SaveChangesAsync();
+            }
+            return product;
+        }
 
+        public async Task<Product> UpdateProduct(long id, Product product)
+        {
+            try
+            {
+                _context.Entry(product).State = EntityState.Modified;
+               await _context.SaveChangesAsync();
+               
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                throw;
+            }
+
+            return product;
+
+        }
     }
 }

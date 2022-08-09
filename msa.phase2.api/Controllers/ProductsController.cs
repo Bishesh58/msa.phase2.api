@@ -21,8 +21,12 @@ namespace msa.phase2.api.Controllers
         {
             _productService = productService;
         }
-
-        // GET: api/Products
+        /// <summary>
+        /// Adds two numbers together
+        /// </summary>
+        /// <param name="left">The number on the left, which must be a positive integer</param>
+        /// <param name="right">The number on the right, which must be a positive integer</param>
+        /// <returns>The sum of the input numbers</returns>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -49,7 +53,7 @@ namespace msa.phase2.api.Controllers
 
             return Ok(product);
         }
-        /*
+        
        // PUT: api/Products/5
        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
        [HttpPut("{id}")]
@@ -60,11 +64,10 @@ namespace msa.phase2.api.Controllers
                return BadRequest();
            }
 
-           _productService.Entry(product).State = EntityState.Modified;
-
            try
            {
-               await _productService.SaveChangesAsync();
+
+               await _productService.UpdateProduct(id, product);
            }
            catch (DbUpdateConcurrencyException)
            {
@@ -80,48 +83,35 @@ namespace msa.phase2.api.Controllers
 
            return NoContent();
        }
-
+        
        // POST: api/Products
-       // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
        [HttpPost]
-       public async Task<ActionResult<Product>> PostProduct(Product product)
+       public async Task<ActionResult<Product>> AddProduct(Product product)
        {
-         if (_context.Products == null)
-         {
-             return Problem("Entity set 'ProductContext.Products'  is null.");
-         }
-           _context.Products.Add(product);
-           await _context.SaveChangesAsync();
+         
+          await  _productService.AddProduct(product);    
 
           // return CreatedAtAction("GetProduct", new { id = product.Id }, product);
            return CreatedAtAction(nameof(GetProduct), new { id = product.Id }, product);
        }
 
+
+        
        // DELETE: api/Products/5
        [HttpDelete("{id}")]
        public async Task<IActionResult> DeleteProduct(long id)
        {
-           if (_context.Products == null)
-           {
-               return NotFound();
-           }
-           var product = await _context.Products.FindAsync(id);
-           if (product == null)
-           {
-               return NotFound();
-           }
 
-           _context.Products.Remove(product);
-           await _context.SaveChangesAsync();
+            await _productService.DeleteProduct(id);
 
            return NoContent();
        }
 
        private bool ProductExists(long id)
        {
-           return (_context.Products?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_productService.GetProduct(id)).Id == id;
        }
 
-       */
+       
     }
 }
