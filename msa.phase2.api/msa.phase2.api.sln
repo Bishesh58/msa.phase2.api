@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "msa.phase2.api", "msa.phase2.api.csproj", "{25D8C9C4-B3BA-4037-A50E-3B5AD326AE7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "msa.phase2.api", "msa.phase2.api.csproj", "{25D8C9C4-B3BA-4037-A50E-3B5AD326AE7A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit Test", "Unit Test", "{836803F5-D2F1-4F3C-8656-A7CBDB00B4F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "msa.phase2.api.test", "..\msa.phase2.api.test\msa.phase2.api.test.csproj", "{1F9D7F56-3CB9-40EC-82DC-473D62B97A71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "msa.phase2.api.test", "..\msa.phase2.api.test\msa.phase2.api.test.csproj", "{1F9D7F56-3CB9-40EC-82DC-473D62B97A71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "msa.phase2.api.client", "..\msa.phase2.api.client\msa.phase2.api.client.csproj", "{49BA2D28-14F0-4EE9-BDF4-E475862C0828}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{1F9D7F56-3CB9-40EC-82DC-473D62B97A71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F9D7F56-3CB9-40EC-82DC-473D62B97A71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F9D7F56-3CB9-40EC-82DC-473D62B97A71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49BA2D28-14F0-4EE9-BDF4-E475862C0828}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49BA2D28-14F0-4EE9-BDF4-E475862C0828}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49BA2D28-14F0-4EE9-BDF4-E475862C0828}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49BA2D28-14F0-4EE9-BDF4-E475862C0828}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
